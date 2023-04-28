@@ -24,32 +24,27 @@ start_create_file()
 	echo $$ > /var/run/my_process.pid
 }
 
-
 stop_del_file()
 {
 	sudo pkill -f "./manage_my_process"
 	rm /var/run/my_process.pid
 }
 
-
 if [ "$1" == "start" ]
 then
 	echo "manage_my_process started"
 	start_create_file
-
 
 elif [ "$1" == "stop" ]
 then
 	echo "manage_my_process stopped"
 	stop_del_file
 
-
 elif [ "$1" == "restart" ]
 then
 	echo "manage_my_process restarted"
 	stop_del_file
 	start_create_file
-
 
 else
 	echo "Usage: manage_my_process {start|stop|restart}"
