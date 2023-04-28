@@ -2,4 +2,3 @@
 # Displays the shell PID.
 
 echo $$
-
