@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Pings an IP address passed as an argument 5 times and displays
+# an error message if no argument is passed.
+
+[[ -z $1 ]] && { echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"; exit 1; }
+ping -c 5 "$1"
